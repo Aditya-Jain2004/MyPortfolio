@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Portfolio Website</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url(img/bg.png);
+      background-size: cover;
+      position: relative; 
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 100px;
+    }
+    .logo {
+      max-height: 60px;
+    }
+    nav ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+    nav ul li a {
+      color: #1d1d24;
+      position: relative;
+      padding: 5px 0;
+    }
+    nav ul li a:hover {
+      color: #fd4766;
+    }
+    nav ul li a:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #fd4766;
+      transition: 0.3s;
+      bottom: 0;
+    }
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+    .btn {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 16px 40px;
+      border-radius: 500px;
+      display: inline-block;
+      font-weight: 500;
+      transition: all 0.4s ease-in-out;
+      background-size: 152% 100%;
+      background: #fd4766;
+      border: 2px solid #fd4766;
+    }
+    .btn:hover {
+      background: transparent;
+      border-color: #fd4766;
+      color: #fd4766;
+    }
+    .content {
+      position: absolute;
+      top: 35%;
+      left: 8%;
+    }
+    .content .title {
+      color: #0a0a0a;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      display: inline-block;
+      margin-bottom: 20px;
+      background: linear-gradient(
+        120deg,
+        #1c99fe 20.69%,
+        #7644ff 50.19%,
+        #fd4766 79.69%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .content h1 {
+      color: #1f1f25;
+      font-size: 75px;
+      font-weight: 900;
+      line-height: 90px;
+      text-transform: inherit;
+      width: 70%;
+      float: left;
+    }
+    .content h1 span {
+      color: #fd4766;
+    }
+    .content p {
+      width: 55%;
+      color: #202020;
+      margin-top: 25px;
+      margin-bottom: 30px;
+    }
+    .profile-image {
+      width: 250px; 
+      position: absolute;
+      top: 50%;
+      right: 10%; 
+      transform: translate(0, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <nav>
+      <ul>
+        <li><a href="#" onclick="displayAbout()">About Me</a></li>
+        <li><a href="#" onclick="displayContact()">Contact Information</a></li>
+        <li><a href="#" onclick="displayEducation()">Education</a></li>
+      </ul>
+      <a href="C:\Users\adity\Downloads\ADITYA JAIN RESUME 2024.pdf" class="btn" download>Download CV</a>
+    </nav>
+
+    <div class="content">
+      <h1 class="title">Web Developer</h1>
+      <h1>Hello, I’m <span>Aditya</span></h1>
+      <p>
+        I’m working on a professional, visually sophisticated and
+        technologically proficient, responsive and multi-functional React
+        Components.
+      </p>
+    </div>
+    <img src="C:\Users\adity\OneDrive\Pictures\Me .jpg" alt="Profile Picture" class="profile-image">
+  </div>
+
+  <script>
+    function displayAbout() {
+      var aboutContent = document.querySelector('.content');
+      aboutContent.innerHTML = `
+        <span class="title">About Me</span>
+        <h2>Hello, I’m <span>Aditya</span></h2>
+        <p>
+            <p>Hello there! I'm Aditya Jain, a dedicated web developer hailing from the vibrant city of Delhi, India. With a fervent passion for technology, I immerse myself in the world of HTML, CSS, and JavaScript, crafting digital experiences that are both visually captivating and functionally robust.</p>
+            <p>My journey in web development is not merely a professional endeavor; it's a journey of self-discovery and growth. Each line of code I write is an opportunity to challenge myself, to unravel the intricacies of programming, and to push the boundaries of my creativity.</p>
+            <p>When I'm not coding, you'll often find me engrossed in the pages of a book, with authors like Robin Sharma serving as my literary companions. Reading isn't just a hobby for me; it's a source of inspiration, a gateway to new ideas, and a means to broaden my horizons.</p>
+            <p>But it's not all about pixels and prose. I'm a fervent sports enthusiast, with a particular penchant for table tennis. Whether it's the adrenaline rush of a competitive match or the camaraderie forged on the court, there's something truly exhilarating about the world of sports.</p>
+            <p>Ultimately, my journey as a web developer is about more than just writing lines of code. It's about embracing curiosity, nurturing creativity, and fostering connections – both digital and human. And I'm excited to embark on this journey, one line of code at a time.</p>
+
+        </p>
+      `;
+    }
+
+    function displayContact() {
+      var contactContent = document.querySelector('.content');
+      contactContent.innerHTML = `
+        <span class="title">Contact Information</span>
+        <p>Email: <strong>adityajain0406@gmail.com</strong></p>
+        <p>Phone: <strong>+91 9876944378</strong></p>
+        <p>Location: <strong>Delhi, India</strong></p>
+      `;
+    }
+
+    function displayEducation() {
+      var educationContent = document.querySelector('.content');
+      educationContent.innerHTML = `
+        <span class="title">Education</span>
+        <p><strong>Bachelor of Science in Computer Science</strong></p>
+        <p>Netaji Subhash University of Technology, Delhi, India</p>
+        <p><strong>High School Diploma</strong></p>
+        <p>Delhi Public School, Kuwait</p>
+      `;
+    }
+  </script>
+</body>
+</html>
